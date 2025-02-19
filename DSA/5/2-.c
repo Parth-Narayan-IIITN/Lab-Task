@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 void merge(int arr[], int left, int mid, int right) {
     int i = left, j = mid + 1, k = 0;
     int temp[right - left + 1];
