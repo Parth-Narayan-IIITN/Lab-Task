@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Node structure
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Function to print the linked list
 void printList(struct Node* head) {
     while (head != NULL) {
         printf("%d -> ", head->data);
@@ -16,7 +14,6 @@ void printList(struct Node* head) {
     printf("NULL\n");
 }
 
-// Function to split a linked list into two halves
 void splitList(struct Node* source, struct Node** front, struct Node** back) {
     struct Node* slow = source;
     struct Node* fast = source->next;
@@ -31,7 +28,6 @@ void splitList(struct Node* source, struct Node** front, struct Node** back) {
     slow->next = NULL;
 }
 
-// Function to merge two sorted linked lists
 struct Node* mergeSortedLists(struct Node* a, struct Node* b) {
     if (a == NULL) return b;
     if (b == NULL) return a;
@@ -49,7 +45,6 @@ struct Node* mergeSortedLists(struct Node* a, struct Node* b) {
     return result;
 }
 
-// Merge Sort function for linked list
 void mergeSort(struct Node** headRef) {
     struct Node* head = *headRef;
     if (head == NULL || head->next == NULL) {
@@ -67,7 +62,6 @@ void mergeSort(struct Node** headRef) {
     *headRef = mergeSortedLists(front, back);
 }
 
-// Function to insert a new node at the end
 void push(struct Node** headRef, int newData) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = newData;
@@ -85,7 +79,6 @@ void push(struct Node** headRef, int newData) {
     temp->next = newNode;
 }
 
-// Driver Code
 int main() {
     struct Node* head = NULL;
 
